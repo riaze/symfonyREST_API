@@ -1,0 +1,24 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (Registry::$prototypes['FOS\\RestBundle\\Controller\\Annotations\\FileParam'] ?? Registry::p('FOS\\RestBundle\\Controller\\Annotations\\FileParam')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'image',
+            ],
+            'description' => [
+                'the backgroud of the list, nullable=fasle, image=true',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+);

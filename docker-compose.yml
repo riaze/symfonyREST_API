@@ -1,0 +1,25 @@
+version: '3.4'
+
+services: 
+  app: 
+    ports: 
+      - 80:80
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/App/public/index.php
+    build:
+      context: .
+    volumes:
+        - .:/var/www/html 
+        - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf
+  
+  
+  
+  
+
+  ##db:
+  #  image: mysql:5.7
+  #  environment:
+  #    - MYSQL_ROOT_PASSWORD=riazeahamed143
+  #    - MYSQL_USER=root
+  #    - MYSQL_PASSWORD=riazeahamed143
+  #  container_name: riazesql

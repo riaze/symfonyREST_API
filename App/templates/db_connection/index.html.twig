@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+  {% for list in list -%}
+  {{ list.title }}<br>
+  {%- endfor %}
+ {% endblock %}

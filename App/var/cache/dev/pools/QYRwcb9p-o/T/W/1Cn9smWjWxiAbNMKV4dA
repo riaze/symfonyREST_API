@@ -1,0 +1,37 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['FOS\\RestBundle\\Controller\\Annotations\\RequestParam'] ?? Registry::p('FOS\\RestBundle\\Controller\\Annotations\\RequestParam')),
+        clone ($p['Symfony\\Component\\Routing\\Annotation\\Route'] ?? Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'title',
+            ],
+            'description' => [
+                'Note for the task',
+            ],
+            'nullable' => [
+                true,
+            ],
+        ],
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                1 => '/test',
+            ],
+            'name' => [
+                1 => 'test',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+);
